@@ -22,7 +22,7 @@
         var q = parseInt(document.getElementById('input_q').value);
         var p = parseInt(document.getElementById('input_p').value);
         var r = parseInt(document.getElementById('input_r').value);
-        var biendem = document.getElementById('days');
+        var biendem = document.getElementById('dems');
         function isMod( mod,  m,  n,  k)
         {
             if((mod % m == 0) && (mod % n == 0) && (mod % k != 0))
@@ -84,7 +84,7 @@
                     <label for="input_r">Input R</label>
                     <input type="number" id="input_r" name="input_r" min="1" max="109" placeholder="6">
 
-                    Số lượng các số thoả mãn là: <input type="text" id="days"><br>
+                    Số lượng các số thoả mãn là: <input type="text" id="dems"><br>
                     <input type="submit" onclick="validate()"  value="Count">
 
                 </div>
