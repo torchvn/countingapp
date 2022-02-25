@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Login Page Template - W3jar.Com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style-with-prefix.css">
+    <style>
+        .srouce{
+            text-align: center;
+            color: #ffffff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<script>
+    function validate() {
+        // e.preventDefault();
+
+        var n = parseInt(document.getElementById('input_n').value);
+        var q = parseInt(document.getElementById('input_q').value);
+        var p = parseInt(document.getElementById('input_p').value);
+        var r = parseInt(document.getElementById('input_r').value);
+        var biendem = document.getElementById('days');
+        function isMod( mod,  m,  n,  k)
+        {
+            if((mod % m == 0) && (mod % n == 0) && (mod % k != 0))
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        
+        function demso(n, p,  q,  r)
+        {
+            var dem = 0;
+            for( i = 1; i <= n;i++)
+            {
+                if(isMod(i,p,q,r) || isMod(i,r,q,p) || isMod(i,p,r,q))
+                {
+                    dem = dem + 1;
+                }
+            }
+            return dem;
+        }
+
+        sodem = demso(n, p,  q,  r)
+        console.log(sodem)
+        biendem.value = sodem
+
+    
+    }
+</script>
+<body>
+
+    <div class="main-container">
+        <div class="form-container">
+
+            <div class="form-body">
+                <h2 class="title" id="iddemso">Counting Application By Quang</h2>
+                <div class="social-login">
+                    <ul>
+                        <li class="google"><a href="#">Google</a></li>
+                        <li class="fb"><a href="#">Facebook</a></li>
+                    </ul>
+                </div><!-- SOCIAL LOGIN -->
+
+                <!-- <div class="_or"></div> -->
+
+                <div action="" class="the-form">
+
+                    <label for="input_n">Input N</label>
+                    <input type="number" id="input_n" name="input_n" min="1" max="109" placeholder="50">
+
+                    <label for="input_p">Input P</label>
+                    <input type="number" id="input_p" name="input_p" min="1" max="109" placeholder="4">
+
+                    <label for="input_q">Input Q</label>
+                    <input type="number" id="input_q" name="input_q" min="1" max="109" placeholder="6">
+
+                    <label for="input_r">Input R</label>
+                    <input type="number" id="input_r" name="input_r" min="1" max="109" placeholder="6">
+
+                    Số ngày: <input type="text" id="days"><br>
+                    <input type="submit" onclick="validate()"  value="Count">
+
+                </div>
+
+            </div><!-- FORM BODY-->
+
+        </div><!-- FORM CONTAINER -->
+    </div>
+    <!-- <script src="index.js"></script> -->
+    
+
+</body>
+</html>
